@@ -1,0 +1,10 @@
+FROM buildo/docker-python2.7-scikit-learn
+
+RUN pip install numpy
+
+# add everything in the current local folder to the container: REQUIRED!
+ADD . /
+
+# run your submission by executing the entrypoint: REQUIRED!
+ENTRYPOINT ["./run.sh"]
+
